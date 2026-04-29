@@ -12,27 +12,29 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --ink: #1a1a18;
-    --ink-muted: #5a5a55;
-    --ink-faint: #989892;
-    --paper: #f8f7ff;
-    --rule: rgba(0, 0, 0, 0.08);
-    --accent: #4f46e5;
-    --accent2: #7c3aed;
-    --accent-muted: rgba(79, 70, 229, 0.1);
+    /* Electric Blue & Peach Theme (Light) */
+    --ink: #0f172a;
+    --ink-muted: #475569;
+    --ink-faint: #94a3b8;
+    --paper: #FFF5F2; /* Soft Peach Background */
+    --rule: rgba(0, 80, 255, 0.1);
+    --accent: #0050FF; /* Electric Blue */
+    --accent2: #FF7A59; /* Vibrant Peach / Coral */
+    --accent-muted: rgba(0, 80, 255, 0.08);
     --serif: 'DM Serif Display', Georgia, serif;
     --sans: 'DM Sans', system-ui, sans-serif;
   }
 
   [data-theme="dark"] {
-    --ink: #f0eeff;
-    --ink-muted: #a09dc0;
-    --ink-faint: #6b6890;
-    --paper: #0a0a0f;
+    /* Electric Blue & Peach Theme (Dark) */
+    --ink: #FFF5F2;
+    --ink-muted: #cbd5e1;
+    --ink-faint: #64748b;
+    --paper: #050b14; /* Deep Electric Dark Blue */
     --rule: rgba(255, 255, 255, 0.08);
-    --accent: #818cf8;
-    --accent2: #a78bfa;
-    --accent-muted: rgba(129, 140, 248, 0.15);
+    --accent: #3b82f6; /* Lighter Electric Blue for dark mode readability */
+    --accent2: #FF8A65; /* Dark Mode Peach */
+    --accent-muted: rgba(59, 130, 246, 0.15);
   }
 
   html { scroll-behavior: smooth; }
@@ -63,15 +65,15 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.4;
+    opacity: 0.35;
     animation: floatOrb 20s infinite ease-in-out alternate;
   }
 
   [data-theme="dark"] .orb { opacity: 0.25; }
 
-  .orb-1 { width: 40vw; height: 40vw; background: #818cf8; top: -10%; left: -10%; animation-delay: 0s; }
-  .orb-2 { width: 35vw; height: 35vw; background: #c084fc; bottom: -10%; right: -5%; animation-delay: -5s; }
-  .orb-3 { width: 30vw; height: 30vw; background: #60a5fa; top: 40%; left: 60%; animation-delay: -10s; }
+  .orb-1 { width: 40vw; height: 40vw; background: var(--accent); top: -10%; left: -10%; animation-delay: 0s; }
+  .orb-2 { width: 35vw; height: 35vw; background: var(--accent2); bottom: -10%; right: -5%; animation-delay: -5s; }
+  .orb-3 { width: 30vw; height: 30vw; background: #00d2ff; top: 40%; left: 60%; animation-delay: -10s; }
 
   @keyframes floatOrb {
     0% { transform: translate(0, 0) scale(1); }
@@ -83,7 +85,7 @@
 
   /* UNIVERSAL GLASSMORPHISM CLASS */
   .glass-panel {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.45);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.6);
@@ -93,14 +95,14 @@
   }
 
   [data-theme="dark"] .glass-panel {
-    background: rgba(30, 28, 50, 0.4);
+    background: rgba(30, 28, 50, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
   .glass-panel.hoverable:hover {
     transform: translateY(-6px);
-    box-shadow: 0 14px 40px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 14px 40px rgba(0, 80, 255, 0.15);
     border-color: var(--accent);
   }
 
@@ -109,7 +111,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 245, 242, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--rule);
@@ -122,7 +124,7 @@
   }
 
   [data-theme="dark"] nav {
-    background: rgba(10, 10, 15, 0.6);
+    background: rgba(5, 11, 20, 0.6);
   }
 
   .nav-logo {
@@ -229,13 +231,13 @@
     border-radius: 50%;
     display: block; margin: 0 auto 2.5rem;
     border: 4px solid rgba(255,255,255,0.4);
-    box-shadow: 0 0 0 4px var(--accent2), 0 20px 40px rgba(99,102,241,0.2);
+    box-shadow: 0 0 0 4px var(--accent2), 0 20px 40px rgba(0,80,255,0.2);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
   }
 
   .profile-img:hover {
     transform: scale(1.02) translateY(-5px);
-    box-shadow: 0 0 0 6px var(--accent), 0 25px 50px rgba(99,102,241,0.3);
+    box-shadow: 0 0 0 6px var(--accent), 0 25px 50px rgba(0,80,255,0.3);
   }
 
   /* STATS GRID */
@@ -302,10 +304,10 @@
     font-size: 0.85rem; font-weight: 500; color: var(--ink);
     padding: 0.4rem 1rem; border-radius: 100px;
     background: var(--accent-muted);
-    border: 1px solid rgba(124,58,237,0.2);
+    border: 1px solid rgba(0,80,255,0.2);
     transition: transform 0.2s, background 0.2s;
   }
-  .skill-pill:hover { transform: translateY(-2px); background: rgba(124,58,237,0.2); }
+  .skill-pill:hover { transform: translateY(-2px); background: rgba(0,80,255,0.2); }
 
   /* PROJECTS */
   #projects .container { display: block; }
@@ -357,7 +359,6 @@
 
   #contact .container {
     display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; 
-    /* Removed min-height to kill empty space */
   }
 
   .contact-desc { font-size: 1.1rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 2rem; }
@@ -381,7 +382,7 @@
 
   /* COMPACT FOOTER */
   footer {
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     border-top: 1px solid var(--rule);
     display: flex;
     align-items: center;
@@ -440,7 +441,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button id="theme-toggle" aria-label="Toggle dark mode" style="background:var(--rule);border:none;border-radius:100px;width:48px;height:26px;cursor:pointer;position:relative;transition:background 0.3s;flex-shrink:0;">
-      <span id="toggle-thumb" style="position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#4f46e5,#7c3aed);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);display:block;"></span>
+      <span id="toggle-thumb" style="position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#0050FF,#FF7A59);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);display:block;"></span>
     </button>
   </div>
 </nav>
@@ -721,7 +722,7 @@
 </section>
 
 <footer>
-  <span>© 2025 Sandeep De Silva</span>
+  <span>© 2026 Sandeep De Silva</span>
   <span>BSc Applied Data Science</span>
 </footer>
 
