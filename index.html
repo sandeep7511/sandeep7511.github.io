@@ -115,7 +115,7 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 24px; /* More modern, softer corners */
+    border-radius: 24px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
   }
@@ -136,6 +136,22 @@
     box-shadow: 0 20px 40px rgba(0, 80, 255, 0.3);
   }
 
+  /* --- NEW: FEATHERED BLUR GUARD FOR SCROLLING --- */
+  .nav-blur-guard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 140px; /* Covers the nav and extends below it to fade out */
+    z-index: 90; /* Sits just behind the nav (z-index 100) */
+    pointer-events: none; /* Clicks pass right through it */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* This creates the gradient fade out for the blur */
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  }
+
   /* FLOATING PILL NAV */
   nav {
     position: fixed;
@@ -144,9 +160,10 @@
     width: 90%;
     max-width: 1040px;
     z-index: 100;
-    background: rgba(255, 245, 242, 0.7);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    background: rgba(255, 245, 242, 0.75);
+    /* Reduced blur here slightly since the guard handles the heavy blurring */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 100px;
     padding: 0 2rem;
@@ -158,7 +175,7 @@
   }
 
   [data-theme="dark"] nav {
-    background: rgba(10, 15, 25, 0.7);
+    background: rgba(10, 15, 25, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   }
@@ -194,7 +211,7 @@
 
   /* HERO */
   #hero {
-    padding-top: 180px; /* Accommodate floating nav */
+    padding-top: 180px;
     padding-bottom: 5rem;
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -280,7 +297,7 @@
   .profile-img {
     width: 320px; height: 320px;
     object-fit: cover; object-position: top;
-    border-radius: 32px; /* Modern squircle look */
+    border-radius: 32px; 
     display: block; margin: 0 auto 2rem;
     position: relative; z-index: 2;
   }
@@ -464,13 +481,13 @@
 
   /* COMPACT ARTWORK FOR CONTACT (FOOTER HEIGHT) */
   #contact .doodle-container {
-    height: 70px; /* Matched to approximate footer height */
+    height: 70px;
     width: 100%;
     margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    animation: none; /* Removed heavy vertical float for this horizontal element */
+    animation: none;
   }
 
   #contact .doodle {
@@ -500,7 +517,7 @@
 
   /* COMPACT FOOTER */
   footer {
-    padding: 1.5rem 2rem; /* Approx 70px total height */
+    padding: 1.5rem 2rem;
     border-top: 1px solid var(--rule);
     display: flex; align-items: center; justify-content: space-between;
     position: relative; z-index: 10;
@@ -524,7 +541,7 @@
   /* MOBILE RESPONSIVENESS */
   @media (max-width: 900px) {
     nav { width: 95%; padding: 0 1.5rem; }
-    .nav-links { display: none; } /* Hide on small screens for cleaner look */
+    .nav-links { display: none; } 
     
     #hero { grid-template-columns: 1fr; gap: 3rem; padding-top: 140px; text-align: center; }
     .hero-cta { justify-content: center; }
@@ -549,6 +566,8 @@
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
 </div>
+
+<div class="nav-blur-guard"></div>
 
 <nav>
   <a href="#hero" class="nav-logo">Sandeep.</a>
