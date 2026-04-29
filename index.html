@@ -225,13 +225,13 @@
 
   /* PROFILE IMAGE STYLING */
   .profile-img {
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 280px;
     object-fit: cover;
     object-position: top;
     border-radius: 50%;
     display: block;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.5rem;
     border: 4px solid var(--paper);
     box-shadow: 0 0 0 3px var(--accent2), 0 0 24px rgba(99,102,241,0.25);
     transition: border-color 0.3s, box-shadow 0.3s;
@@ -242,34 +242,50 @@
     box-shadow: 0 0 0 3px var(--accent), 0 0 24px rgba(129,140,248,0.25);
   }
 
+  /* UPDATED STATS GRID */
   .stat-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
+    gap: 1.5rem;
   }
 
   .stat-cell {
-    background: rgba(255,255,255,0.55);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
     padding: 1.5rem;
-    backdrop-filter: blur(8px);
-    transition: background 0.3s;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  [data-theme="dark"] .stat-cell { background: rgba(30,27,75,0.45); }
+
+  [data-theme="dark"] .stat-cell {
+    background: rgba(30, 27, 75, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .stat-cell:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+  }
 
   .stat-num {
     font-family: var(--serif);
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     line-height: 1;
     letter-spacing: -0.02em;
-    color: var(--ink);
-    margin-bottom: 0.4rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  [data-theme="dark"] .stat-num {
+    color: var(--accent2);
   }
 
   .stat-label {
     font-size: 0.8rem;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--ink-faint);
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -332,12 +348,16 @@
 
   /* SECTION LAYOUTS */
   #about .container, 
-  #projects .container, 
   #experience .container {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 6rem;
     align-items: start;
+  }
+
+  /* Projects layout overrides to be full width */
+  #projects .container {
+    display: block; 
   }
 
   .about-body p {
@@ -382,9 +402,9 @@
 
   .project-item {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    padding: 2rem 0;
+    grid-template-columns: 3fr 1fr; /* Adjusted for full width layout */
+    gap: 4rem;
+    padding: 2.5rem 0;
     border-top: 1px solid var(--rule);
     align-items: start;
     text-decoration: none;
@@ -405,28 +425,29 @@
 
   .project-title {
     font-family: var(--serif);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     letter-spacing: -0.01em;
     color: var(--ink);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
     transition: color 0.2s;
   }
 
   .project-item:hover .project-title { color: var(--accent); }
 
   .project-desc {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 300;
     color: var(--ink-muted);
     line-height: 1.7;
+    max-width: 90%;
   }
 
   .project-meta {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0.5rem;
-    padding-top: 1.8rem;
+    gap: 0.75rem;
+    padding-top: 2rem;
   }
 
   .project-tag {
@@ -436,12 +457,12 @@
     text-transform: uppercase;
     color: var(--accent);
     background: var(--accent-muted);
-    padding: 0.25rem 0.6rem;
-    border-radius: 2px;
+    padding: 0.35rem 0.8rem;
+    border-radius: 100px;
   }
 
   .project-status {
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     color: var(--ink-faint);
   }
 
@@ -592,8 +613,14 @@
       padding-top: 100px;
     }
 
+    .profile-img {
+      width: 220px; /* Scale down slightly for mobile */
+      height: 220px;
+    }
+
+    .stat-grid { gap: 1rem; }
+
     #about .container,
-    #projects .container,
     #experience .container,
     #contact .container {
       grid-template-columns: 1fr;
@@ -602,8 +629,9 @@
 
     .doodle { min-height: 150px; }
 
-    .project-item { grid-template-columns: 1fr; }
-    .project-meta { align-items: flex-start; padding-top: 0; }
+    .project-item { grid-template-columns: 1fr; gap: 1rem; }
+    .project-meta { align-items: flex-start; padding-top: 0; flex-direction: row; align-items: center; justify-content: space-between; width: 100%;}
+    .project-desc { max-width: 100%; }
 
     .nav-links { gap: 1.25rem; }
     .contact-links { margin-top: 0; }
@@ -734,110 +762,99 @@
 
 <section id="projects">
   <div class="container">
-    <div class="section-left reveal">
-      <div class="section-label">Projects</div>
-      <div class="section-num">02</div>
-
-      <svg class="doodle" viewBox="0 0 200 400" preserveAspectRatio="xMidYMin meet" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M 20 380 L 20 50" stroke="var(--ink-faint)" stroke-width="2" stroke-linecap="round"/>
-        <path d="M 20 380 L 180 380" stroke="var(--ink-faint)" stroke-width="2" stroke-linecap="round"/>
-        <rect x="40" y="280" width="25" height="100" rx="2" stroke="var(--accent2)" stroke-width="2" stroke-dasharray="4 2" fill="none"/>
-        <rect x="80" y="200" width="25" height="180" rx="2" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 2" fill="none"/>
-        <rect x="120" y="100" width="25" height="280" rx="2" stroke="var(--accent2)" stroke-width="2" stroke-dasharray="4 2" fill="none"/>
-        <path d="M 52 250 Q 92 180 132 50" stroke="var(--ink-muted)" stroke-width="2" stroke-dasharray="4 3" fill="none" stroke-linecap="round"/>
-        <circle cx="52" cy="250" r="4" fill="var(--accent2)"/>
-        <circle cx="92" cy="150" r="4" fill="var(--accent)"/>
-        <circle cx="132" cy="50" r="4" fill="var(--accent2)"/>
-      </svg>
+    
+    <div class="section-header reveal" style="margin-bottom: 3.5rem;">
+      <div>
+        <div class="section-label">Projects</div>
+        <div class="section-num" style="margin-bottom: 1rem;">02</div>
+      </div>
+      <h2 style="margin-bottom: 0;">Selected work.</h2>
     </div>
 
-    <div>
-      <h2 class="reveal" style="margin-bottom: 2.5rem;">Selected work.</h2>
-      <div class="project-list">
-        <a class="project-item reveal" href="https://github.com/sandeep7511/HARA-Hospital-Autonomous-Resource-Allocation-Agent" target="_blank" rel="noopener">
-          <div>
-            <div class="project-num">01</div>
-            <div class="project-title">HARA — Hospital Autonomous Resource Allocation Agent</div>
-            <p class="project-desc">An autonomous AI agent managing hospital beds, staff, and equipment in real time using Gemini AI, n8n, Flask, SQL Server, and Streamlit. A Gemini-powered decision loop runs every 30 seconds via n8n — allocating resources, logging reasoning, and updating a live dashboard without human intervention.</p>
-          </div>
-          <div class="project-meta">
-            <span class="project-tag">AI Agent</span>
-            <span class="project-status">↗ View on GitHub</span>
-          </div>
-        </a>
+    <div class="project-list">
+      <a class="project-item reveal" href="https://github.com/sandeep7511/HARA-Hospital-Autonomous-Resource-Allocation-Agent" target="_blank" rel="noopener">
+        <div>
+          <div class="project-num">01</div>
+          <div class="project-title">HARA — Hospital Autonomous Resource Allocation Agent</div>
+          <p class="project-desc">An autonomous AI agent managing hospital beds, staff, and equipment in real time using Gemini AI, n8n, Flask, SQL Server, and Streamlit. A Gemini-powered decision loop runs every 30 seconds via n8n — allocating resources, logging reasoning, and updating a live dashboard without human intervention.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag">AI Agent</span>
+          <span class="project-status">↗ View on GitHub</span>
+        </div>
+      </a>
 
-        <a class="project-item reveal reveal-delay-1" href="https://github.com/sandeep7511/SmartCart-Intelligent-Recommendations-for-Walmart-Shoppers" target="_blank" rel="noopener">
-          <div>
-            <div class="project-num">02</div>
-            <div class="project-title">SmartCart — Intelligent Recommendations for Walmart Shoppers</div>
-            <p class="project-desc">A hybrid recommendation engine combining Association Rule Mining (Apriori) and Content-Based Filtering on Walmart's retail dataset. Uncovers cross-category purchase affinities and product similarities, with an interactive Streamlit dashboard for exploring mined rules via heatmaps and network graphs.</p>
-          </div>
-          <div class="project-meta">
-            <span class="project-tag">Data Mining</span>
-            <span class="project-status">↗ View on GitHub</span>
-          </div>
-        </a>
+      <a class="project-item reveal reveal-delay-1" href="https://github.com/sandeep7511/SmartCart-Intelligent-Recommendations-for-Walmart-Shoppers" target="_blank" rel="noopener">
+        <div>
+          <div class="project-num">02</div>
+          <div class="project-title">SmartCart — Intelligent Recommendations for Walmart Shoppers</div>
+          <p class="project-desc">A hybrid recommendation engine combining Association Rule Mining (Apriori) and Content-Based Filtering on Walmart's retail dataset. Uncovers cross-category purchase affinities and product similarities, with an interactive Streamlit dashboard for exploring mined rules via heatmaps and network graphs.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag">Data Mining</span>
+          <span class="project-status">↗ View on GitHub</span>
+        </div>
+      </a>
 
-        <a class="project-item reveal reveal-delay-2" href="https://github.com/sandeep7511/Predictive-Modeling-for-Diabetes-Using-Machine-Learning" target="_blank" rel="noopener">
-          <div>
-            <div class="project-num">03</div>
-            <div class="project-title">Predictive Modelling for Diabetes Using Machine Learning</div>
-            <p class="project-desc">Classification and clustering applied to CDC BRFSS 2023 survey data (23,000+ records) to predict diabetes risk and segment population health profiles. Tackled severe class imbalance with SMOTE, evaluated KNN, Decision Tree, and Naïve Bayes models, and used K-Means with PCA to reveal distinct high-risk demographic clusters.</p>
-          </div>
-          <div class="project-meta">
-            <span class="project-tag">Healthcare ML</span>
-            <span class="project-status">↗ View on GitHub</span>
-          </div>
-        </a>
+      <a class="project-item reveal reveal-delay-2" href="https://github.com/sandeep7511/Predictive-Modeling-for-Diabetes-Using-Machine-Learning" target="_blank" rel="noopener">
+        <div>
+          <div class="project-num">03</div>
+          <div class="project-title">Predictive Modelling for Diabetes Using Machine Learning</div>
+          <p class="project-desc">Classification and clustering applied to CDC BRFSS 2023 survey data (23,000+ records) to predict diabetes risk and segment population health profiles. Tackled severe class imbalance with SMOTE, evaluated KNN, Decision Tree, and Naïve Bayes models, and used K-Means with PCA to reveal distinct high-risk demographic clusters.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag">Healthcare ML</span>
+          <span class="project-status">↗ View on GitHub</span>
+        </div>
+      </a>
 
-        <a class="project-item reveal reveal-delay-3" href="https://github.com/sandeep7511/Heartbeat-and-Hope-What-Influences-Survival-After-Transplant-" target="_blank" rel="noopener">
-          <div>
-            <div class="project-num">04</div>
-            <div class="project-title">Heartbeat and Hope — Survival Analysis After Transplant</div>
-            <p class="project-desc">Logistic regression survival analysis on 23,665 allogeneic stem cell transplant recipients (CIBMTR, 2008–2016). Achieved 89% accuracy and 0.95 AUC. Boruta feature selection across 99 iterations identified renal failure and severe GVHD as the strongest mortality predictors, with a risk stratification tool classifying patients into low, medium, and high-risk cohorts.</p>
-          </div>
-          <div class="project-meta">
-            <span class="project-tag">Survival Analysis</span>
-            <span class="project-status">↗ View on GitHub</span>
-          </div>
-        </a>
+      <a class="project-item reveal reveal-delay-3" href="https://github.com/sandeep7511/Heartbeat-and-Hope-What-Influences-Survival-After-Transplant-" target="_blank" rel="noopener">
+        <div>
+          <div class="project-num">04</div>
+          <div class="project-title">Heartbeat and Hope — Survival Analysis After Transplant</div>
+          <p class="project-desc">Logistic regression survival analysis on 23,665 allogeneic stem cell transplant recipients (CIBMTR, 2008–2016). Achieved 89% accuracy and 0.95 AUC. Boruta feature selection across 99 iterations identified renal failure and severe GVHD as the strongest mortality predictors, with a risk stratification tool classifying patients into low, medium, and high-risk cohorts.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag">Survival Analysis</span>
+          <span class="project-status">↗ View on GitHub</span>
+        </div>
+      </a>
 
-        <a class="project-item reveal" href="https://github.com/sandeep7511/UK-Sponsorship-Visa-for-Employers-Data-Analysis-Dashboard" target="_blank" rel="noopener">
-          <div>
-            <div class="project-num">05</div>
-            <div class="project-title">UK Sponsorship Visa — Data Analysis Dashboard</div>
-            <p class="project-desc">End-to-end BI project analysing 16 million+ UK study and work sponsorship applications using SQL Server and Power BI. Built a star-schema data model with custom DAX measures for QoQ growth and study-to-work ratios, surfacing nationality concentration, sectoral dependencies, and post-2020 immigration surges across four government datasets.</p>
-          </div>
-          <div class="project-meta">
-            <span class="project-tag">Power BI · SQL</span>
-            <span class="project-status">↗ View on GitHub</span>
-          </div>
-        </a>
+      <a class="project-item reveal" href="https://github.com/sandeep7511/UK-Sponsorship-Visa-for-Employers-Data-Analysis-Dashboard" target="_blank" rel="noopener">
+        <div>
+          <div class="project-num">05</div>
+          <div class="project-title">UK Sponsorship Visa — Data Analysis Dashboard</div>
+          <p class="project-desc">End-to-end BI project analysing 16 million+ UK study and work sponsorship applications using SQL Server and Power BI. Built a star-schema data model with custom DAX measures for QoQ growth and study-to-work ratios, surfacing nationality concentration, sectoral dependencies, and post-2020 immigration surges across four government datasets.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag">Power BI · SQL</span>
+          <span class="project-status">↗ View on GitHub</span>
+        </div>
+      </a>
 
-        <a class="project-item reveal reveal-delay-1" href="https://github.com/sandeep7511/Developing-a-Power-BI-Dashboard-for-Olympic-Games-Analysis" target="_blank" rel="noopener">
-          <div>
-            <div class="project-num">06</div>
-            <div class="project-title">Power BI Dashboard — Olympic Games Analysis</div>
-            <p class="project-desc">Interactive Power BI dashboard visualising historical Summer and Winter Olympic medal data sourced from Wikipedia. Features medal breakdowns by country, era-level trend analysis, participation vs. success efficiency metrics, and gold/silver/bronze distribution — built end-to-end from raw web extraction through Excel cleaning to DAX-driven visuals.</p>
-          </div>
-          <div class="project-meta">
-            <span class="project-tag">Power BI</span>
-            <span class="project-status">↗ View on GitHub</span>
-          </div>
-        </a>
+      <a class="project-item reveal reveal-delay-1" href="https://github.com/sandeep7511/Developing-a-Power-BI-Dashboard-for-Olympic-Games-Analysis" target="_blank" rel="noopener">
+        <div>
+          <div class="project-num">06</div>
+          <div class="project-title">Power BI Dashboard — Olympic Games Analysis</div>
+          <p class="project-desc">Interactive Power BI dashboard visualising historical Summer and Winter Olympic medal data sourced from Wikipedia. Features medal breakdowns by country, era-level trend analysis, participation vs. success efficiency metrics, and gold/silver/bronze distribution — built end-to-end from raw web extraction through Excel cleaning to DAX-driven visuals.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag">Power BI</span>
+          <span class="project-status">↗ View on GitHub</span>
+        </div>
+      </a>
 
-        <a class="project-item reveal reveal-delay-2" href="https://github.com/sandeep7511/Hessian-Fly-Resistance-Plant-Stunting-and-Larval-Mortality-in-Durum-Wheat" target="_blank" rel="noopener">
-          <div>
-            <div class="project-num">07</div>
-            <div class="project-title">Hessian Fly Resistance — QTL Mapping &amp; ML in Durum Wheat</div>
-            <p class="project-desc">ML classification and QTL mapping on 2,649 USDA plant records to predict Hessian fly resistance in durum wheat. An ANN achieved 98% accuracy, with Random Forest pinpointing larval mortality as the top predictor. QTL analysis identified two major loci on chromosomes 2A and 3B together explaining over 50% of phenotypic variance in resistance.</p>
-          </div>
-          <div class="project-meta">
-            <span class="project-tag">Research · ML</span>
-            <span class="project-status">↗ View on GitHub</span>
-          </div>
-        </a>
-      </div>
+      <a class="project-item reveal reveal-delay-2" href="https://github.com/sandeep7511/Hessian-Fly-Resistance-Plant-Stunting-and-Larval-Mortality-in-Durum-Wheat" target="_blank" rel="noopener">
+        <div>
+          <div class="project-num">07</div>
+          <div class="project-title">Hessian Fly Resistance — QTL Mapping &amp; ML in Durum Wheat</div>
+          <p class="project-desc">ML classification and QTL mapping on 2,649 USDA plant records to predict Hessian fly resistance in durum wheat. An ANN achieved 98% accuracy, with Random Forest pinpointing larval mortality as the top predictor. QTL analysis identified two major loci on chromosomes 2A and 3B together explaining over 50% of phenotypic variance in resistance.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag">Research · ML</span>
+          <span class="project-status">↗ View on GitHub</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
