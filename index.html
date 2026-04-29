@@ -6,24 +6,23 @@
 <title>Sandeep De Silva — Data Science</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,600;1,9..40,700&display=swap" rel="stylesheet">
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    /* Electric Blue & Vibrant Peach Theme (Light, more vibrant) */
+    /* Vibrant Theme (Light) */
     --ink: #0f172a;
     --ink-muted: #475569;
     --ink-faint: #94a3b8;
-    --paper: #FFF5F2; /* Soft Peach Background */
+    --paper: #FFF5F2; 
     --rule: rgba(0, 80, 255, 0.1);
     
-    /* Vibrant Gradients & Saturated Colors */
     --primary-solid: #0066FF;
     --secondary-solid: #FF5A72;
-    --accent-vibrant: #33CCFF; /* Neo-Cyan */
-    --accent-vibrant2: #FF1A4C; /* Intense Coral */
+    --accent-vibrant: #33CCFF; 
+    --accent-vibrant2: #FF1A4C; 
     
     --primary-grad: linear-gradient(135deg, #0050FF 0%, #33CCFF 100%);
     --secondary-grad: linear-gradient(135deg, #FF7A59 0%, #FF1A4C 100%);
@@ -35,19 +34,16 @@
   }
 
   [data-theme="dark"] {
-    /* Electric Blue & Vibrant Peach Theme (Dark, more dynamic) */
-    --ink: #FFF5F2;
+    /* Vibrant Theme (Dark) */
+    --ink: #ffffff;
     --ink-muted: #cbd5e1;
     --ink-faint: #64748b;
-    --paper: #020810; /* Deeper Dark Blue */
+    --paper: #020810; 
     --rule: rgba(255, 255, 255, 0.08);
 
-    /* Intense Gradients & High Saturation */
     --primary-solid: #3b82f6;
     --secondary-solid: #FF8A65;
-    --accent-vibrant: #60A5FA; /* Brighter Blue */
-    --accent-vibrant2: #FF5252; /* Vivid Red-Coral */
-
+    
     --primary-grad: linear-gradient(135deg, #0050FF 0%, #60A5FA 100%);
     --secondary-grad: linear-gradient(135deg, #FF7A59 0%, #FF5252 100%);
     --vibrant-glow: 0 10px 40px rgba(59, 130, 246, 0.35);
@@ -70,7 +66,7 @@
     transition: background-color 0.4s ease, color 0.4s ease;
   }
 
-  /* ANIMATED BACKGROUND ORBS WITH DYNAMIC GRADIENTS */
+  /* BACKGROUND ORBS */
   .bg-animation {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
@@ -83,29 +79,26 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.4;
+    opacity: 0.35;
     animation: floatOrb 20s infinite ease-in-out alternate;
   }
 
-  [data-theme="dark"] .orb { opacity: 0.28; }
+  [data-theme="dark"] .orb { opacity: 0.25; }
 
   .orb-1 {
     width: 45vw; height: 45vw;
     background: linear-gradient(135deg, #0050FF 0%, #33CCFF 100%);
-    top: -15%; left: -15%;
-    animation-delay: 0s;
+    top: -15%; left: -15%; animation-delay: 0s;
   }
   .orb-2 {
     width: 40vw; height: 40vw;
     background: linear-gradient(135deg, #FF7A59 0%, #FF1A4C 100%);
-    bottom: -15%; right: -10%;
-    animation-delay: -5s;
+    bottom: -15%; right: -10%; animation-delay: -5s;
   }
   .orb-3 {
     width: 35vw; height: 35vw;
     background: linear-gradient(135deg, #33CCFF 0%, #FF1A4C 100%);
-    top: 45%; left: 65%;
-    animation-delay: -10s;
+    top: 45%; left: 65%; animation-delay: -10s;
   }
 
   @keyframes floatOrb {
@@ -116,53 +109,64 @@
 
   nav, section, footer, .container { position: relative; z-index: 1; }
 
-  /* UNIVERSAL GLASSMORPHISM CLASS */
+  /* MODERN GLASSMORPHISM (BENTO STYLE) */
   .glass-panel {
     background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 24px; /* More modern, softer corners */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
   }
 
   [data-theme="dark"] .glass-panel {
-    background: rgba(18, 24, 38, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(18, 24, 38, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
   .glass-panel.hoverable:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 40px rgba(0, 80, 255, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 80, 255, 0.15);
     border-color: var(--primary-solid);
   }
 
-  /* NAV */
+  [data-theme="dark"] .glass-panel.hoverable:hover {
+    box-shadow: 0 20px 40px rgba(0, 80, 255, 0.3);
+  }
+
+  /* FLOATING PILL NAV */
   nav {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 24px; left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1040px;
     z-index: 100;
-    background: rgba(255, 245, 242, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--rule);
+    background: rgba(255, 245, 242, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 100px;
     padding: 0 2rem;
     height: 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: background 0.3s, border-color 0.3s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
   }
 
   [data-theme="dark"] nav {
-    background: rgba(2, 8, 16, 0.6);
+    background: rgba(10, 15, 25, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   }
 
   .nav-logo {
     font-family: var(--serif);
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--ink);
     text-decoration: none;
     background: var(--primary-grad);
@@ -172,8 +176,8 @@
 
   .nav-links { display: flex; gap: 2.2rem; list-style: none; }
   .nav-links a {
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: var(--ink-muted);
     text-decoration: none;
     transition: color 0.2s;
@@ -185,15 +189,15 @@
   }
 
   /* LAYOUT */
-  .container { max-width: 1040px; margin: 0 auto; padding: 0 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
   section { padding: 8rem 0; }
 
   /* HERO */
   #hero {
-    padding-top: 160px;
+    padding-top: 180px; /* Accommodate floating nav */
     padding-bottom: 5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 4rem;
     align-items: center;
     min-height: 90vh;
@@ -209,15 +213,14 @@
     text-transform: uppercase;
     color: var(--primary-solid);
     margin-bottom: 1.5rem;
-  }
-
-  .hero-tag::before {
-    content: ''; display: inline-block; width: 32px; height: 3px; background: var(--primary-grad); border-radius: 3px;
+    background: var(--accent-muted);
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
   }
 
   h1 {
     font-family: var(--serif);
-    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-size: clamp(3rem, 5.5vw, 4.8rem);
     line-height: 1.05;
     letter-spacing: -0.02em;
     color: var(--ink);
@@ -233,10 +236,10 @@
 
   .hero-desc {
     font-size: 1.15rem;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--ink-muted);
-    line-height: 1.75;
-    max-width: 440px;
+    line-height: 1.8;
+    max-width: 480px;
     margin-bottom: 2.5rem;
   }
 
@@ -248,7 +251,7 @@
     background: var(--primary-grad);
     color: var(--paper);
     font-weight: 600;
-    padding: 1rem 2rem;
+    padding: 1.1rem 2.2rem;
     border-radius: 100px;
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
@@ -256,18 +259,15 @@
   }
 
   [data-theme="dark"] .btn-primary {
-    background: #fff;
-    color: #000;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    background: #fff; color: #000; box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
   }
   
   .btn-primary:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--vibrant-glow);
+    transform: translateY(-4px); box-shadow: var(--vibrant-glow);
   }
 
   .btn-ghost {
-    color: var(--ink-muted);
+    color: var(--ink);
     font-weight: 600;
     text-decoration: none;
     transition: color 0.2s;
@@ -275,82 +275,73 @@
   .btn-ghost:hover { color: var(--primary-solid); }
 
   /* PROFILE IMAGE */
+  .profile-wrapper { position: relative; display: flex; justify-content: center; align-items: center; }
+  
   .profile-img {
-    width: 300px; height: 300px;
+    width: 320px; height: 320px;
     object-fit: cover; object-position: top;
-    border-radius: 50%;
-    display: block; margin: 0 auto 2.5rem;
-    border: 5px solid rgba(255,255,255,0.4);
-    box-shadow: 0 0 0 6px var(--secondary-solid), 0 25px 50px rgba(0,80,255,0.25);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border-radius: 32px; /* Modern squircle look */
+    display: block; margin: 0 auto 2rem;
+    position: relative; z-index: 2;
   }
 
-  .profile-img:hover {
-    transform: scale(1.03) translateY(-6px);
-    box-shadow: 0 0 0 8px var(--primary-solid), 0 30px 60px rgba(0,80,255,0.35);
+  .profile-backdrop {
+    position: absolute;
+    top: -10px; left: 50%; transform: translateX(-50%);
+    width: 330px; height: 330px;
+    border-radius: 35px;
+    background: var(--secondary-grad);
+    opacity: 0.6; filter: blur(25px);
+    z-index: 1; animation: pulseBackdrop 4s infinite alternate;
+  }
+
+  @keyframes pulseBackdrop {
+    0% { transform: translateX(-50%) scale(1); opacity: 0.4; }
+    100% { transform: translateX(-50%) scale(1.05); opacity: 0.7; }
   }
 
   /* STATS GRID */
-  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  
-  .stat-cell { padding: 1.8rem; text-align: center; }
-  
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .stat-cell { padding: 1.5rem; text-align: center; }
   .stat-num {
-    font-family: var(--serif);
-    font-size: 3rem;
-    line-height: 1;
-    background: var(--primary-grad);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-family: var(--serif); font-size: 2.5rem; line-height: 1;
+    background: var(--primary-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
   }
-
   [data-theme="dark"] .stat-num {
-    background: var(--secondary-grad);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: var(--secondary-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
-
   .stat-label {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--ink-faint);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-size: 0.75rem; font-weight: 700; color: var(--ink-faint);
+    letter-spacing: 0.1em; text-transform: uppercase;
   }
 
   /* CONTINUOUS DOODLE ANIMATION */
-  .doodle-container { animation: floatDoodle 6s ease-in-out infinite; }
-  
   @keyframes floatDoodle {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
   }
 
-  .doodle { width: 100%; opacity: 0.6; }
-
   /* SECTIONS SHARED */
   .section-label {
-    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--primary-solid); margin-bottom: 0.5rem;
   }
 
   .section-num {
-    font-family: var(--serif); font-size: 1rem; color: var(--ink-faint); font-style: italic;
+    font-family: var(--serif); font-size: 1.2rem; color: var(--ink-faint); font-style: italic;
   }
 
   h2 {
-    font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
+    font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem);
     line-height: 1.1; margin-bottom: 1.5rem; color: var(--ink);
   }
   h2 em {
-    font-style: italic;
-    background: var(--secondary-grad);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-style: italic; background: var(--secondary-grad);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
 
-  /* ABOUT SECTION SPECIFIC - DENSE ARTWORK FILL */
+  /* ABOUT SECTION */
   #about .container {
     display: grid; grid-template-columns: 1fr 2.5fr; gap: 6rem; align-items: start;
   }
@@ -360,151 +351,168 @@
   }
 
   #about .doodle-container {
-    animation: floatDoodleSmall 8s ease-in-out infinite;
-    flex-grow: 1; /* Stretch to fill vertical space */
-    width: 100%; display: flex; justify-content: center; align-items: start;
+    animation: floatDoodle 8s ease-in-out infinite;
+    flex-grow: 1; width: 100%; display: flex; justify-content: center; align-items: start;
     margin-top: 1rem;
   }
 
   #about .doodle {
-    min-height: 500px; /* Force minimum height to stretch */
-    height: 100%; width: auto; max-width: 100%; opacity: 0.7;
-  }
-
-  @keyframes floatDoodleSmall {
-    0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-10px) scale(1.02); }
+    min-height: 500px; height: 100%; width: auto; max-width: 100%; opacity: 0.7;
   }
 
   .about-body p {
-    font-size: 1.05rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 1.5rem;
+    font-size: 1.1rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 1.5rem;
   }
   .about-body p strong { color: var(--ink); font-weight: 600; }
 
   .skills-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2.2rem; }
   .skill-pill {
-    font-size: 0.85rem; font-weight: 600; color: var(--ink);
-    padding: 0.5rem 1.1rem; border-radius: 100px;
+    font-size: 0.9rem; font-weight: 600; color: var(--ink);
+    padding: 0.6rem 1.2rem; border-radius: 100px;
     background: var(--accent-muted);
-    border: 1px solid rgba(0,80,255,0.2);
-    transition: transform 0.2s, background 0.2s;
+    border: 1px solid rgba(0,80,255,0.1);
+    transition: all 0.3s;
   }
   .skill-pill:hover {
-    transform: translateY(-2px);
-    background: var(--primary-grad);
-    color: var(--paper);
-    border-color: transparent;
+    transform: translateY(-3px); background: var(--primary-grad);
+    color: var(--paper); border-color: transparent; box-shadow: 0 5px 15px rgba(0,80,255,0.2);
   }
 
-  /* PROJECTS */
+  /* PROJECTS - MODERN BENTO GRID */
   #projects .container { display: block; }
-  .project-list { display: flex; flex-direction: column; gap: 2rem; }
+  
+  .section-header {
+    display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3.5rem;
+  }
+
+  .project-list { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    gap: 2rem; 
+  }
 
   .project-item {
-    display: grid; grid-template-columns: 3fr 1fr; gap: 3rem;
+    display: flex; flex-direction: column; justify-content: space-between;
     padding: 2.5rem; text-decoration: none; color: inherit;
+    min-height: 320px;
   }
 
+  .project-top { margin-bottom: 2rem; }
+
   .project-num {
-    font-family: var(--serif); font-style: italic; font-size: 1rem;
-    background: var(--primary-grad);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 0.5rem;
+    font-family: var(--serif); font-style: italic; font-size: 1.2rem;
+    background: var(--primary-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem; display: inline-block;
   }
 
   .project-title {
-    font-family: var(--serif); font-size: 1.6rem; color: var(--ink);
-    margin-bottom: 1rem; transition: color 0.2s;
+    font-family: var(--serif); font-size: 1.8rem; color: var(--ink);
+    margin-bottom: 1rem; transition: color 0.2s; line-height: 1.2;
   }
   .project-item:hover .project-title { color: var(--primary-solid); }
 
   .project-desc {
-    font-size: 1rem; color: var(--ink-muted); line-height: 1.7; max-width: 95%;
+    font-size: 1.05rem; color: var(--ink-muted); line-height: 1.7;
   }
 
   .project-meta {
-    display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 1.5rem; border-top: 1px solid var(--rule);
   }
 
   .project-tag {
     font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    background: var(--secondary-grad);
-    color: var(--paper); padding: 0.5rem 1rem; border-radius: 100px;
+    color: var(--secondary-solid);
   }
 
-  /* EXPERIENCE */
-  #experience .container {
-    display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start;
+  .project-status {
+    font-weight: 600; color: var(--primary-solid); font-size: 0.9rem;
   }
-  .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
-  .exp-item { padding: 2rem; }
 
-  .exp-period { font-size: 0.85rem; color: var(--primary-solid); font-weight: 700; margin-bottom: 0.5rem; }
-  .exp-role { font-family: var(--serif); font-size: 1.4rem; color: var(--ink); margin-bottom: 0.2rem; }
-  .exp-place { font-size: 1rem; color: var(--ink-muted); font-weight: 500; margin-bottom: 1rem; }
-  .exp-detail { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.7; }
-
-  /* CONTACT SECTION - TIGHTENED UP */
-  #contact {
-    padding-top: 6rem;
-    padding-bottom: 4rem; /* Reduced bottom padding to bring footer up */
+  /* EXPERIENCE - BENTO STYLE CARDS */
+  #experience .container { display: block; }
+  .exp-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
   }
+  
+  .exp-item { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+
+  .exp-period { 
+    display: inline-block; font-size: 0.85rem; color: var(--primary-solid); 
+    font-weight: 700; margin-bottom: 1rem; background: var(--accent-muted);
+    padding: 0.4rem 1rem; border-radius: 100px;
+  }
+  .exp-role { font-family: var(--serif); font-size: 1.6rem; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.2; }
+  .exp-place { font-size: 1rem; color: var(--ink-muted); font-weight: 600; margin-bottom: 1.5rem; }
+  .exp-detail { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.7; }
+
+  /* CONTACT SECTION */
+  #contact { padding-top: 8rem; padding-bottom: 4rem; }
 
   #contact .container {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; 
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center; 
   }
 
-  .contact-desc { font-size: 1.1rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 2rem; }
+  .contact-desc { font-size: 1.2rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 2.5rem; }
 
   .contact-email {
-    font-family: var(--serif); font-size: 1.6rem; color: var(--ink);
-    text-decoration: none; border-bottom: 2px solid var(--primary-solid); padding-bottom: 4px;
-    transition: color 0.3s;
+    font-family: var(--serif); font-size: 2rem; color: var(--ink);
+    text-decoration: none; border-bottom: 3px solid var(--primary-solid); padding-bottom: 4px;
+    transition: color 0.3s; display: inline-block;
   }
   .contact-email:hover { color: var(--primary-solid); }
 
+  /* COMPACT ARTWORK FOR CONTACT (FOOTER HEIGHT) */
   #contact .doodle-container {
-    animation: floatDoodleMedium 10s ease-in-out infinite;
-  }
-  @keyframes floatDoodleMedium {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-12px) rotate(2deg); }
+    height: 70px; /* Matched to approximate footer height */
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    animation: none; /* Removed heavy vertical float for this horizontal element */
   }
 
-  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  #contact .doodle {
+    height: 100%; width: auto; max-width: 100%;
+    animation: pulseTech 4s infinite alternate ease-in-out;
+  }
+
+  @keyframes pulseTech {
+    0% { opacity: 0.6; filter: drop-shadow(0 0 5px rgba(0, 102, 255, 0.2)); }
+    100% { opacity: 1; filter: drop-shadow(0 0 15px rgba(255, 26, 76, 0.6)); }
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 1.2rem; }
 
   .contact-link {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.3rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; color: var(--ink);
+    padding: 1.5rem 2rem; text-decoration: none; font-size: 1.1rem; font-weight: 600; color: var(--ink);
   }
   
   .contact-arrow {
-    font-size: 1.3rem; transition: transform 0.3s;
+    font-size: 1.5rem; transition: transform 0.3s;
     background: var(--primary-grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .contact-link:hover .contact-arrow { transform: translateX(5px) translateY(-5px); }
+  .contact-link:hover .contact-arrow { transform: translateX(8px) translateY(-8px); }
 
   /* COMPACT FOOTER */
   footer {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 2rem; /* Approx 70px total height */
     border-top: 1px solid var(--rule);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 10;
-    background: var(--glass-bg); /* Use glass for footer too */
-    backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: space-between;
+    position: relative; z-index: 10;
+    background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);
   }
+  [data-theme="dark"] footer { background: rgba(0,0,0,0.2); }
 
-  footer span { font-size: 0.85rem; font-weight: 500; color: var(--ink-faint); }
+  footer span { font-size: 0.9rem; font-weight: 600; color: var(--ink-faint); }
 
   /* SCROLL REVEAL */
   .reveal {
-    opacity: 0; transform: translateY(30px);
+    opacity: 0; transform: translateY(40px);
     transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
   }
   .reveal.visible { opacity: 1; transform: none; }
@@ -513,24 +521,24 @@
   .reveal-delay-3 { transition-delay: 0.3s; }
   .reveal-delay-4 { transition-delay: 0.4s; }
 
-  /* MOBILE */
-  @media (max-width: 768px) {
-    #hero { grid-template-columns: 1fr; gap: 3rem; padding-top: 120px; }
-    .profile-img { width: 260px; height: 260px; }
-    .stat-grid { gap: 1rem; }
+  /* MOBILE RESPONSIVENESS */
+  @media (max-width: 900px) {
+    nav { width: 95%; padding: 0 1.5rem; }
+    .nav-links { display: none; } /* Hide on small screens for cleaner look */
     
-    #about .container, #experience .container, #contact .container {
-      grid-template-columns: 1fr; gap: 3rem;
-    }
+    #hero { grid-template-columns: 1fr; gap: 3rem; padding-top: 140px; text-align: center; }
+    .hero-cta { justify-content: center; }
+    .profile-wrapper { order: -1; }
     
-    #about .doodle { min-height: auto; height: 300px; } /* Reset fill stretch on mobile */
+    #about .container { grid-template-columns: 1fr; gap: 3rem; }
+    #about .doodle { min-height: auto; height: 250px; } 
 
-    .project-item { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
-    .project-meta { flex-direction: row; align-items: center; justify-content: space-between; padding-top: 1rem; }
-    .project-desc { max-width: 100%; }
+    .project-list, .exp-grid { grid-template-columns: 1fr; }
     
-    .nav-links { gap: 1.5rem; }
-    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    #contact .container { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+    #contact .doodle-container { justify-content: center; }
+    
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
 </head>
@@ -543,16 +551,16 @@
 </div>
 
 <nav>
-  <a href="#hero" class="nav-logo">Sandeep De Silva</a>
+  <a href="#hero" class="nav-logo">Sandeep.</a>
   <div style="display:flex;align-items:center;gap:2rem;">
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#projects">Work</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button id="theme-toggle" aria-label="Toggle dark mode" style="background:var(--rule);border:none;border-radius:100px;width:48px;height:26px;cursor:pointer;position:relative;transition:background 0.3s;flex-shrink:0;">
-      <span id="toggle-thumb" style="position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--primary-solid),var(--secondary-solid));transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);display:block;"></span>
+    <button id="theme-toggle" aria-label="Toggle dark mode" style="background:var(--rule);border:none;border-radius:100px;width:54px;height:30px;cursor:pointer;position:relative;transition:background 0.3s;flex-shrink:0;">
+      <span id="toggle-thumb" style="position:absolute;top:4px;left:4px;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--primary-solid),var(--secondary-solid));transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);display:block;"></span>
     </button>
   </div>
 </nav>
@@ -560,41 +568,35 @@
 <div class="container">
   <section id="hero">
     <div class="hero-left">
-      <div class="hero-tag reveal">Data Science &amp; Engineering</div>
+      <div class="hero-tag reveal">Data Scientist & Engineer</div>
       <h1 class="reveal reveal-delay-1">
         Building<br>
         <em>intelligent</em><br>
-        systems<br>
-        from data.
+        systems.
       </h1>
       <p class="hero-desc reveal reveal-delay-2">
-        Undergraduate researcher at KDU, applying machine learning, data engineering, and LLM integration to solve real-world problems across healthcare, analytics, and beyond.
+        Undergraduate researcher at KDU, applying machine learning, data engineering, and LLM integration to solve real-world problems.
       </p>
       <div class="hero-cta reveal reveal-delay-3">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="mailto:sandeepdesilva01@gmail.com" class="btn-ghost">Get in touch →</a>
+        <a href="#projects" class="btn-primary">Explore Work</a>
+        <a href="mailto:sandeepdesilva01@gmail.com" class="btn-ghost">Let's talk →</a>
       </div>
     </div>
 
     <div class="hero-right reveal reveal-delay-2">
-      <img src="https://github.com/sandeep7511/sandeep7511.github.io/blob/main/sandeep.jpeg?raw=true" alt="Sandeep De Silva" class="profile-img">
+      <div class="profile-wrapper">
+        <div class="profile-backdrop"></div>
+        <img src="https://github.com/sandeep7511/sandeep7511.github.io/blob/main/sandeep.jpeg?raw=true" alt="Sandeep De Silva" class="profile-img">
+      </div>
       
       <div class="stat-grid">
         <div class="stat-cell glass-panel hoverable">
           <div class="stat-num">3.96</div>
-          <div class="stat-label">GPA out of 4.0</div>
+          <div class="stat-label">GPA (4.0 Scale)</div>
         </div>
         <div class="stat-cell glass-panel hoverable">
           <div class="stat-num">#1</div>
-          <div class="stat-label">Cohort of 47</div>
-        </div>
-        <div class="stat-cell glass-panel hoverable">
-          <div class="stat-num">BSc</div>
-          <div class="stat-label">Data Science</div>
-        </div>
-        <div class="stat-cell glass-panel hoverable">
-          <div class="stat-num">KDU</div>
-          <div class="stat-label">Sri Lanka</div>
+          <div class="stat-label">Cohort Rank</div>
         </div>
       </div>
     </div>
@@ -618,23 +620,17 @@
               <stop offset="100%" stop-color="#FF1A4C" />
             </linearGradient>
           </defs>
-          <circle cx="50" cy="50" r="10" stroke="url(#grad2)" stroke-width="2.5" stroke-dasharray="4 3"/>
-          <circle cx="350" cy="80" r="8" stroke="url(#grad1)" stroke-width="2" stroke-dasharray="4 3"/>
-          <circle cx="100" cy="200" r="12" stroke="url(#grad2)" stroke-width="3" stroke-dasharray="4 3"/>
-          <circle cx="300" cy="220" r="10" stroke="url(#grad1)" stroke-width="2.5" stroke-dasharray="4 3"/>
-          <circle cx="70" cy="350" r="9" stroke="url(#grad2)" stroke-width="2.5" stroke-dasharray="4 3"/>
-          <circle cx="330" cy="370" r="11" stroke="url(#grad1)" stroke-width="3" stroke-dasharray="4 3"/>
-          <circle cx="120" cy="500" r="10" stroke="url(#grad2)" stroke-width="2.5" stroke-dasharray="4 3"/>
-          <circle cx="280" cy="520" r="12" stroke="url(#grad1)" stroke-width="3" stroke-dasharray="4 3"/>
-          <circle cx="90" cy="650" r="9" stroke="url(#grad2)" stroke-width="2.5" stroke-dasharray="4 3"/>
-          <circle cx="310" cy="670" r="10" stroke="url(#grad1)" stroke-width="2.5" stroke-dasharray="4 3"/>
-          <circle cx="110" cy="800" r="11" stroke="url(#grad2)" stroke-width="3" stroke-dasharray="4 3"/>
-          <circle cx="290" cy="820" r="13" stroke="url(#grad1)" stroke-width="3.5" stroke-dasharray="4 3"/>
-          <circle cx="190" cy="140" r="6" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="3 3"/>
-          <circle cx="210" cy="290" r="7" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="3 3"/>
-          <circle cx="190" cy="430" r="6" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="3 3"/>
-          <circle cx="210" cy="580" r="7" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="3 3"/>
-          <circle cx="190" cy="720" r="6" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <circle cx="50" cy="50" r="10" stroke="url(#grad2)" stroke-width="3" stroke-dasharray="4 3"/>
+          <circle cx="350" cy="80" r="8" stroke="url(#grad1)" stroke-width="2.5" stroke-dasharray="4 3"/>
+          <circle cx="100" cy="200" r="12" stroke="url(#grad2)" stroke-width="3.5" stroke-dasharray="4 3"/>
+          <circle cx="300" cy="220" r="10" stroke="url(#grad1)" stroke-width="3" stroke-dasharray="4 3"/>
+          <circle cx="70" cy="350" r="9" stroke="url(#grad2)" stroke-width="3" stroke-dasharray="4 3"/>
+          <circle cx="330" cy="370" r="11" stroke="url(#grad1)" stroke-width="3.5" stroke-dasharray="4 3"/>
+          <circle cx="120" cy="500" r="10" stroke="url(#grad2)" stroke-width="3" stroke-dasharray="4 3"/>
+          <circle cx="280" cy="520" r="12" stroke="url(#grad1)" stroke-width="3.5" stroke-dasharray="4 3"/>
+          <circle cx="90" cy="650" r="9" stroke="url(#grad2)" stroke-width="3" stroke-dasharray="4 3"/>
+          <circle cx="310" cy="670" r="10" stroke="url(#grad1)" stroke-width="3" stroke-dasharray="4 3"/>
+          <circle cx="110" cy="800" r="11" stroke="url(#grad2)" stroke-width="3.5" stroke-dasharray="4 3"/>
           <line x1="55" y1="58" x2="95" y2="195" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="3 3"/>
           <line x1="345" y1="88" x2="305" y2="215" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="3 3"/>
           <line x1="108" y1="210" x2="292" y2="210" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="4 3"/>
@@ -643,14 +639,6 @@
           <line x1="78" y1="358" x2="118" y2="495" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="3 3"/>
           <line x1="322" y1="378" x2="282" y2="515" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="3 3"/>
           <line x1="130" y1="500" x2="270" y2="520" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="4 3"/>
-          <line x1="125" y1="512" x2="95" y2="645" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="3 3"/>
-          <line x1="280" y1="530" x2="310" y2="660" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="3 3"/>
-          <line x1="98" y1="658" x2="108" y2="792" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="3 3"/>
-          <line x1="302" y1="678" x2="292" y2="812" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="3 3"/>
-          <line x1="196" y1="145" x2="210" y2="283" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="2 2"/>
-          <line x1="206" y1="298" x2="190" y2="423" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="2 2"/>
-          <line x1="196" y1="435" x2="210" y2="573" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="2 2"/>
-          <line x1="206" y1="588" x2="190" y2="713" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="2 2"/>
         </svg>
       </div>
     </div>
@@ -679,8 +667,6 @@
         <span class="skill-pill">Microsoft Fabric</span>
         <span class="skill-pill">Azure</span>
         <span class="skill-pill">DAX</span>
-        <span class="skill-pill">Survival Analysis</span>
-        <span class="skill-pill">QTL Mapping</span>
       </div>
     </div>
   </div>
@@ -688,20 +674,20 @@
 
 <section id="projects">
   <div class="container">
-    <div class="section-header reveal" style="margin-bottom: 3.5rem;">
+    <div class="section-header reveal">
       <div>
         <div class="section-label">Projects</div>
-        <div class="section-num" style="margin-bottom: 1rem;">02</div>
+        <h2>Selected work.</h2>
       </div>
-      <h2 style="margin-bottom: 0;">Selected work.</h2>
+      <div class="section-num">02</div>
     </div>
 
     <div class="project-list">
       <a class="project-item glass-panel hoverable reveal" href="https://github.com/sandeep7511/HARA-Hospital-Autonomous-Resource-Allocation-Agent" target="_blank" rel="noopener">
-        <div>
+        <div class="project-top">
           <div class="project-num">01</div>
           <div class="project-title">HARA — Autonomous Resource Allocation Agent</div>
-          <p class="project-desc">An autonomous AI agent managing hospital beds, staff, and equipment in real time using Gemini AI, n8n, Flask, SQL Server, and Streamlit. A Gemini-powered decision loop runs every 30 seconds via n8n — allocating resources, logging reasoning, and updating a live dashboard without human intervention.</p>
+          <p class="project-desc">An autonomous AI agent managing hospital beds, staff, and equipment in real time. A Gemini-powered decision loop runs every 30 seconds via n8n to allocate resources without human intervention.</p>
         </div>
         <div class="project-meta">
           <span class="project-tag">AI Agent</span>
@@ -710,10 +696,10 @@
       </a>
 
       <a class="project-item glass-panel hoverable reveal reveal-delay-1" href="https://github.com/sandeep7511/SmartCart-Intelligent-Recommendations-for-Walmart-Shoppers" target="_blank" rel="noopener">
-        <div>
+        <div class="project-top">
           <div class="project-num">02</div>
           <div class="project-title">SmartCart — Recommendations for Walmart Shoppers</div>
-          <p class="project-desc">A hybrid recommendation engine combining Association Rule Mining (Apriori) and Content-Based Filtering on Walmart's retail dataset. Uncovers cross-category purchase affinities and product similarities, with an interactive Streamlit dashboard for exploring mined rules via heatmaps and network graphs.</p>
+          <p class="project-desc">A hybrid recommendation engine combining Association Rule Mining (Apriori) and Content-Based Filtering on Walmart's retail dataset. Uncovers cross-category purchase affinities.</p>
         </div>
         <div class="project-meta">
           <span class="project-tag">Data Mining</span>
@@ -722,10 +708,10 @@
       </a>
 
       <a class="project-item glass-panel hoverable reveal reveal-delay-2" href="https://github.com/sandeep7511/Predictive-Modeling-for-Diabetes-Using-Machine-Learning" target="_blank" rel="noopener">
-        <div>
+        <div class="project-top">
           <div class="project-num">03</div>
-          <div class="project-title">Predictive Modelling for Diabetes Using Machine Learning</div>
-          <p class="project-desc">Classification and clustering applied to CDC BRFSS 2023 survey data (23,000+ records) to predict diabetes risk and segment population health profiles. Tackled severe class imbalance with SMOTE, evaluated KNN, Decision Tree, and Naïve Bayes models, and used K-Means with PCA to reveal distinct high-risk demographic clusters.</p>
+          <div class="project-title">Predictive Modelling for Diabetes Risk</div>
+          <p class="project-desc">Classification and clustering applied to CDC BRFSS survey data (23,000+ records). Tackled class imbalance with SMOTE and used K-Means with PCA for population segmentation.</p>
         </div>
         <div class="project-meta">
           <span class="project-tag">Healthcare ML</span>
@@ -733,11 +719,11 @@
         </div>
       </a>
 
-      <a class="project-item glass-panel hoverable reveal reveal-delay-3" href="https://github.com/sandeep7511/Heartbeat-and-Hope-What-Influences-Survival-After-Transplant-" target="_blank" rel="noopener">
-        <div>
+      <a class="project-item glass-panel hoverable reveal" href="https://github.com/sandeep7511/Heartbeat-and-Hope-What-Influences-Survival-After-Transplant-" target="_blank" rel="noopener">
+        <div class="project-top">
           <div class="project-num">04</div>
-          <div class="project-title">Heartbeat & Hope — Survival Analysis After Transplant</div>
-          <p class="project-desc">Logistic regression survival analysis on 23,665 allogeneic stem cell transplant recipients. Achieved 89% accuracy and 0.95 AUC. Boruta feature selection identified renal failure and severe GVHD as the strongest mortality predictors, with a risk stratification tool classifying patients into low, medium, and high-risk cohorts.</p>
+          <div class="project-title">Heartbeat & Hope — Survival Analysis</div>
+          <p class="project-desc">Logistic regression survival analysis on 23,665 allogeneic stem cell transplant recipients. Achieved 89% accuracy and 0.95 AUC with Boruta feature selection.</p>
         </div>
         <div class="project-meta">
           <span class="project-tag">Survival Analysis</span>
@@ -745,11 +731,11 @@
         </div>
       </a>
 
-      <a class="project-item glass-panel hoverable reveal" href="https://github.com/sandeep7511/UK-Sponsorship-Visa-for-Employers-Data-Analysis-Dashboard" target="_blank" rel="noopener">
-        <div>
+      <a class="project-item glass-panel hoverable reveal reveal-delay-1" href="https://github.com/sandeep7511/UK-Sponsorship-Visa-for-Employers-Data-Analysis-Dashboard" target="_blank" rel="noopener">
+        <div class="project-top">
           <div class="project-num">05</div>
-          <div class="project-title">UK Sponsorship Visa — Data Analysis Dashboard</div>
-          <p class="project-desc">End-to-end BI project analysing 16 million+ UK study and work sponsorship applications using SQL Server and Power BI. Built a star-schema data model with custom DAX measures for QoQ growth and study-to-work ratios, surfacing nationality concentration, sectoral dependencies, and post-2020 immigration surges.</p>
+          <div class="project-title">UK Sponsorship Visa Data Dashboard</div>
+          <p class="project-desc">End-to-end BI project analysing 16 million+ applications using SQL Server and Power BI. Built a star-schema data model with custom DAX measures.</p>
         </div>
         <div class="project-meta">
           <span class="project-tag">Power BI · SQL</span>
@@ -757,14 +743,14 @@
         </div>
       </a>
 
-      <a class="project-item glass-panel hoverable reveal reveal-delay-1" href="https://github.com/sandeep7511/Hessian-Fly-Resistance-Plant-Stunting-and-Larval-Mortality-in-Durum-Wheat" target="_blank" rel="noopener">
-        <div>
+      <a class="project-item glass-panel hoverable reveal reveal-delay-2" href="https://github.com/sandeep7511/Hessian-Fly-Resistance-Plant-Stunting-and-Larval-Mortality-in-Durum-Wheat" target="_blank" rel="noopener">
+        <div class="project-top">
           <div class="project-num">06</div>
-          <div class="project-title">Hessian Fly Resistance — QTL Mapping & ML</div>
-          <p class="project-desc">ML classification and QTL mapping on 2,649 USDA plant records to predict Hessian fly resistance in durum wheat. An ANN achieved 98% accuracy, with Random Forest pinpointing larval mortality as the top predictor. QTL analysis identified two major loci together explaining over 50% of phenotypic variance.</p>
+          <div class="project-title">Hessian Fly Resistance — QTL Mapping</div>
+          <p class="project-desc">ML classification and QTL mapping on USDA plant records. An ANN achieved 98% accuracy. Identified two major loci explaining over 50% of phenotypic variance.</p>
         </div>
         <div class="project-meta">
-          <span class="project-tag">Research · ML</span>
+          <span class="project-tag">Genomics ML</span>
           <span class="project-status">View Code ↗</span>
         </div>
       </a>
@@ -774,59 +760,34 @@
 
 <section id="experience">
   <div class="container">
-    <div class="section-left reveal">
-      <div class="section-label">Experience</div>
-      <div class="section-num">03</div>
-      <div class="doodle-container">
-        <svg class="doodle" viewBox="0 0 200 400" preserveAspectRatio="xMidYMin meet" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="gradExp1" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#FF7A59" />
-              <stop offset="100%" stop-color="#FF1A4C" />
-            </linearGradient>
-            <linearGradient id="gradExp2" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#0050FF" />
-              <stop offset="100%" stop-color="#33CCFF" />
-            </linearGradient>
-          </defs>
-          <path d="M 40 0 Q 100 50 40 100 T 40 200 T 40 300 T 40 400" stroke="url(#gradExp1)" stroke-width="2.5" stroke-dasharray="6 3" fill="none"/>
-          <path d="M 100 0 Q 40 50 100 100 T 100 200 T 100 300 T 100 400" stroke="url(#gradExp2)" stroke-width="2.5" stroke-dasharray="6 3" fill="none"/>
-          <line x1="55" y1="50" x2="85" y2="50" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="2 2"/>
-          <line x1="55" y1="150" x2="85" y2="150" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="2 2"/>
-          <line x1="55" y1="250" x2="85" y2="250" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="2 2"/>
-          <line x1="55" y1="350" x2="85" y2="350" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="2 2"/>
-          <circle cx="160" cy="80" r="7" stroke="url(#gradExp1)" stroke-width="2" stroke-dasharray="3 2" fill="none"/>
-          <circle cx="180" cy="180" r="9" stroke="url(#gradExp2)" stroke-width="2.5" stroke-dasharray="3 2" fill="none"/>
-          <circle cx="150" cy="280" r="6" stroke="url(#gradExp1)" stroke-width="2" stroke-dasharray="3 2" fill="none"/>
-          <line x1="160" y1="86" x2="180" y2="174" stroke="var(--ink-faint)" stroke-width="1" stroke-dasharray="2 2"/>
-          <line x1="180" y1="188" x2="150" y2="275" stroke="var(--ink-faint)" stroke-width="1" stroke-dasharray="2 2"/>
-        </svg>
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Experience</div>
+        <h2>Academic &amp; applied.</h2>
       </div>
+      <div class="section-num">03</div>
     </div>
     
-    <div>
-      <h2 class="reveal" style="margin-bottom: 2.5rem;">Academic &amp;<br><em>applied work.</em></h2>
-      <div class="exp-list">
-        <div class="exp-item glass-panel hoverable reveal reveal-delay-1">
-          <div class="exp-period">2022 — Present</div>
-          <div class="exp-role">BSc Applied Data Science and Communication</div>
-          <div class="exp-place">General Sir John Kotelawala Defence University · Sri Lanka</div>
-          <p class="exp-detail">Ranked 1st out of 47 students with a GPA of 3.9625 / 4.0. Coursework spans machine learning, statistical modelling, data engineering, and applied AI systems.</p>
-        </div>
+    <div class="exp-grid">
+      <div class="exp-item glass-panel hoverable reveal reveal-delay-1">
+        <div class="exp-period">2022 — Present</div>
+        <div class="exp-role">BSc Applied Data Science</div>
+        <div class="exp-place">Kotelawala Defence University</div>
+        <p class="exp-detail">Ranked 1st out of 47 students with a GPA of 3.9625. Coursework spans machine learning, statistical modelling, data engineering, and applied AI systems.</p>
+      </div>
 
-        <div class="exp-item glass-panel hoverable reveal reveal-delay-2">
-          <div class="exp-period">Ongoing</div>
-          <div class="exp-role">Independent Researcher — AI &amp; Data Engineering</div>
-          <div class="exp-place">Self-directed · Remote</div>
-          <p class="exp-detail">Independently developing AI agent systems and cloud data pipelines. Actively applying Microsoft Fabric, Azure, and Google Gemini API in production-grade projects alongside academic study.</p>
-        </div>
+      <div class="exp-item glass-panel hoverable reveal reveal-delay-2">
+        <div class="exp-period">Ongoing</div>
+        <div class="exp-role">Independent Researcher</div>
+        <div class="exp-place">AI &amp; Data Engineering</div>
+        <p class="exp-detail">Developing AI agent systems and cloud data pipelines. Actively applying Microsoft Fabric, Azure, and Google Gemini API in production-grade projects.</p>
+      </div>
 
-        <div class="exp-item glass-panel hoverable reveal reveal-delay-3">
-          <div class="exp-period">Ongoing</div>
-          <div class="exp-role">Open to Collaboration</div>
-          <div class="exp-place">Advanced Analytics · Data Engineering · Visualisation</div>
-          <p class="exp-detail">Actively seeking opportunities to collaborate on meaningful data science projects. Particularly interested in applied ML, large-scale data systems, and intelligent automation.</p>
-        </div>
+      <div class="exp-item glass-panel hoverable reveal reveal-delay-3">
+        <div class="exp-period">Status</div>
+        <div class="exp-role">Open to Collaboration</div>
+        <div class="exp-place">Remote / Global</div>
+        <p class="exp-detail">Seeking opportunities to collaborate on meaningful data science projects. Interested in applied ML, large-scale data systems, and intelligent automation.</p>
       </div>
     </div>
   </div>
@@ -836,27 +797,31 @@
   <div class="container">
     <div class="section-left reveal">
       <div class="section-label">Contact</div>
-      <h2 class="reveal" style="margin-bottom: 1.25rem;">Let's build<br><em>something.</em></h2>
-      <p class="contact-desc reveal reveal-delay-1">Open to collaboration, research partnerships, and conversations about data science, ML engineering, and applied AI.</p>
-      <a href="mailto:sandeepdesilva01@gmail.com" class="contact-email reveal reveal-delay-2">sandeepdesilva01@gmail.com</a>
+      <h2 style="margin-bottom: 1.25rem;">Let's build<br><em>something.</em></h2>
+      <p class="contact-desc">Open to collaboration, research partnerships, and conversations about data science, ML engineering, and applied AI.</p>
+      <a href="mailto:sandeepdesilva01@gmail.com" class="contact-email">sandeepdesilva01@gmail.com</a>
       
-      <div class="doodle-container" style="margin-top: 3rem;">
-        <svg class="doodle" viewBox="0 0 200 400" preserveAspectRatio="xMidYMin meet" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <div class="doodle-container">
+        <svg class="doodle" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
-            <linearGradient id="gradContact" x1="0" y1="0" x2="1" y2="1">
+            <linearGradient id="gradNode1" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stop-color="#0050FF" />
               <stop offset="100%" stop-color="#33CCFF" />
             </linearGradient>
-            <linearGradient id="gradContact2" x1="0" y1="0" x2="1" y2="1">
+            <linearGradient id="gradNode2" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stop-color="#FF7A59" />
               <stop offset="100%" stop-color="#FF1A4C" />
             </linearGradient>
           </defs>
-          <path d="M 20 350 C 20 200, 180 250, 100 100 C 50 20, 160 20, 150 80" stroke="var(--ink-faint)" stroke-width="2.5" stroke-dasharray="5 5" fill="none"/>
-          <g transform="translate(130, 60) rotate(15)">
-            <path d="M 10 30 L 40 10 L 25 40 L 20 25 Z" stroke="url(#gradContact)" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
-            <path d="M 20 25 L 40 10" stroke="url(#gradContact2)" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
-          </g>
+          <path d="M 10 40 L 70 40 L 90 20 L 150 20 L 170 60 L 230 60 L 250 40 L 290 40" stroke="url(#gradNode1)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="10" cy="40" r="5" fill="url(#gradNode2)"/>
+          <circle cx="70" cy="40" r="4" fill="#fff"/>
+          <circle cx="90" cy="20" r="4" fill="#fff"/>
+          <circle cx="150" cy="20" r="6" fill="url(#gradNode2)"/>
+          <circle cx="170" cy="60" r="4" fill="#fff"/>
+          <circle cx="230" cy="60" r="4" fill="#fff"/>
+          <circle cx="250" cy="40" r="6" fill="url(#gradNode2)"/>
+          <circle cx="290" cy="40" r="5" fill="url(#gradNode1)"/>
         </svg>
       </div>
     </div>
@@ -895,7 +860,7 @@
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
@@ -915,7 +880,7 @@
   const saved = localStorage.getItem('theme');
   if (saved === 'dark') {
     html.setAttribute('data-theme', 'dark');
-    thumb.style.transform = 'translateX(22px)';
+    thumb.style.transform = 'translateX(26px)';
   }
 
   toggle.addEventListener('click', () => {
@@ -926,7 +891,7 @@
       localStorage.setItem('theme', 'light');
     } else {
       html.setAttribute('data-theme', 'dark');
-      thumb.style.transform = 'translateX(22px)';
+      thumb.style.transform = 'translateX(26px)';
       localStorage.setItem('theme', 'dark');
     }
   });
