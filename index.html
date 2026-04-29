@@ -321,7 +321,6 @@
     text-decoration: none;
     color: inherit;
     transition: background 0.2s;
-    cursor: default;
   }
 
   .project-item:last-child { border-bottom: 1px solid var(--rule); }
@@ -611,25 +610,31 @@
     <div class="about-body">
       <h2 class="reveal">Turning complex data<br><em>into clear decisions.</em></h2>
       <p class="reveal reveal-delay-1">
-        I'm Sandeep De Silva, an undergraduate at General Sir John Kotelawala Defence University reading for a <strong>BSc in Applied Data Science and Communication</strong>. Ranked first in my cohort, I focus on the intersection of machine learning, data engineering, and applied AI.
+        I'm Sandeep De Silva, an undergraduate at General Sir John Kotelawala Defence University reading for a <strong>BSc in Applied Data Science and Communication</strong>. Ranked first in my cohort of 47 with a GPA of 3.9625, I work across the full spectrum of data science — from machine learning and statistical modelling to autonomous AI agents and BI engineering.
       </p>
       <p class="reveal reveal-delay-2">
-        My current work spans <strong>autonomous AI agents</strong> for hospital resource allocation, <strong>LLM integrations</strong> via the Gemini API, and cloud data infrastructure using <strong>Microsoft Fabric and Azure</strong>. I'm drawn to problems where rigorous analysis leads to tangible, real-world impact.
+        My projects span <strong>clinical survival analysis</strong> (23,665 transplant records, 0.95 AUC), <strong>autonomous hospital resource allocation</strong> via Gemini AI and n8n, <strong>hybrid recommendation systems</strong>, and <strong>QTL mapping in agricultural genomics</strong>. I build in Python, R, SQL Server, Power BI, Flask, and Streamlit — and I'm actively developing expertise in <strong>Microsoft Fabric and Azure</strong>.
       </p>
       <p class="reveal reveal-delay-3">
-        I'm actively looking to collaborate on advanced analytics, data engineering pipelines, and visualization projects. If you're building something at the frontier of applied data science, I'd love to talk.
+        I'm actively looking to collaborate on advanced analytics, data engineering pipelines, and applied AI projects. If you're building something at the frontier of data science, let's talk.
       </p>
       <div class="skills-row reveal reveal-delay-4">
         <span class="skill-pill">Python</span>
-        <span class="skill-pill">Machine Learning</span>
+        <span class="skill-pill">R</span>
+        <span class="skill-pill">SQL Server</span>
+        <span class="skill-pill">Power BI</span>
+        <span class="skill-pill">Gemini AI</span>
+        <span class="skill-pill">scikit-learn</span>
+        <span class="skill-pill">TensorFlow / Keras</span>
+        <span class="skill-pill">Streamlit</span>
+        <span class="skill-pill">Flask</span>
+        <span class="skill-pill">n8n</span>
         <span class="skill-pill">Microsoft Fabric</span>
         <span class="skill-pill">Azure</span>
-        <span class="skill-pill">Gemini API</span>
-        <span class="skill-pill">LLM Integration</span>
-        <span class="skill-pill">Data Engineering</span>
-        <span class="skill-pill">Data Visualization</span>
-        <span class="skill-pill">SQL</span>
-        <span class="skill-pill">Power BI</span>
+        <span class="skill-pill">DAX</span>
+        <span class="skill-pill">Association Rule Mining</span>
+        <span class="skill-pill">Survival Analysis</span>
+        <span class="skill-pill">QTL Mapping</span>
       </div>
     </div>
   </div>
@@ -648,53 +653,89 @@
 
     <div class="project-list">
 
-      <div class="project-item reveal">
+      <a class="project-item reveal" href="https://github.com/sandeep7511/HARA-Hospital-Autonomous-Resource-Allocation-Agent" target="_blank" rel="noopener">
         <div>
           <div class="project-num">01</div>
-          <div class="project-title">Autonomous Hospital Resource Allocation AI Agent</div>
-          <p class="project-desc">An intelligent agent system that dynamically allocates hospital resources — beds, staff, equipment — using real-time data and machine learning forecasting. Designed to reduce operational bottlenecks in high-pressure clinical environments.</p>
+          <div class="project-title">HARA — Hospital Autonomous Resource Allocation Agent</div>
+          <p class="project-desc">An autonomous AI agent managing hospital beds, staff, and equipment in real time using Gemini AI, n8n, Flask, SQL Server, and Streamlit. A Gemini-powered decision loop runs every 30 seconds via n8n — allocating resources, logging reasoning, and updating a live dashboard without human intervention.</p>
         </div>
         <div class="project-meta">
           <span class="project-tag">AI Agent</span>
-          <span class="project-status">In Progress</span>
+          <span class="project-status">↗ View on GitHub</span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-item reveal reveal-delay-1">
+      <a class="project-item reveal reveal-delay-1" href="https://github.com/sandeep7511/SmartCart-Intelligent-Recommendations-for-Walmart-Shoppers" target="_blank" rel="noopener">
         <div>
           <div class="project-num">02</div>
-          <div class="project-title">LLM-Integrated Analytics Dashboard</div>
-          <p class="project-desc">A full-stack analytics platform integrating Google Gemini API for natural language querying of datasets. Users can ask questions in plain English and receive structured insights, charts, and summaries generated in real time.</p>
+          <div class="project-title">SmartCart — Intelligent Recommendations for Walmart Shoppers</div>
+          <p class="project-desc">A hybrid recommendation engine combining Association Rule Mining (Apriori) and Content-Based Filtering on Walmart's retail dataset. Uncovers cross-category purchase affinities and product similarities, with an interactive Streamlit dashboard for exploring mined rules via heatmaps and network graphs.</p>
         </div>
         <div class="project-meta">
-          <span class="project-tag">LLM</span>
-          <span class="project-status">In Progress</span>
+          <span class="project-tag">Data Mining</span>
+          <span class="project-status">↗ View on GitHub</span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-item reveal reveal-delay-2">
+      <a class="project-item reveal reveal-delay-2" href="https://github.com/sandeep7511/Predictive-Modeling-for-Diabetes-Using-Machine-Learning" target="_blank" rel="noopener">
         <div>
           <div class="project-num">03</div>
-          <div class="project-title">Microsoft Fabric Data Engineering Pipeline</div>
-          <p class="project-desc">End-to-end data engineering solution built on Microsoft Fabric and Azure, handling ingestion, transformation, and serving of large-scale datasets. Implemented lakehouse architecture with automated pipeline orchestration.</p>
+          <div class="project-title">Predictive Modelling for Diabetes Using Machine Learning</div>
+          <p class="project-desc">Classification and clustering applied to CDC BRFSS 2023 survey data (23,000+ records) to predict diabetes risk and segment population health profiles. Tackled severe class imbalance with SMOTE, evaluated KNN, Decision Tree, and Naïve Bayes models, and used K-Means with PCA to reveal distinct high-risk demographic clusters.</p>
         </div>
         <div class="project-meta">
-          <span class="project-tag">Data Eng</span>
-          <span class="project-status">In Progress</span>
+          <span class="project-tag">Healthcare ML</span>
+          <span class="project-status">↗ View on GitHub</span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-item reveal reveal-delay-3">
+      <a class="project-item reveal reveal-delay-3" href="https://github.com/sandeep7511/Heartbeat-and-Hope-What-Influences-Survival-After-Transplant-" target="_blank" rel="noopener">
         <div>
           <div class="project-num">04</div>
-          <div class="project-title">Predictive Analytics &amp; Visualization Suite</div>
-          <p class="project-desc">A collection of ML models and interactive dashboards built to surface predictive insights from structured datasets. Covers classification, regression, and time-series forecasting with clear visual output.</p>
+          <div class="project-title">Heartbeat and Hope — Survival Analysis After Transplant</div>
+          <p class="project-desc">Logistic regression survival analysis on 23,665 allogeneic stem cell transplant recipients (CIBMTR, 2008–2016). Achieved 89% accuracy and 0.95 AUC. Boruta feature selection across 99 iterations identified renal failure and severe GVHD as the strongest mortality predictors, with a risk stratification tool classifying patients into low, medium, and high-risk cohorts.</p>
         </div>
         <div class="project-meta">
-          <span class="project-tag">ML</span>
-          <span class="project-status">Ongoing</span>
+          <span class="project-tag">Survival Analysis</span>
+          <span class="project-status">↗ View on GitHub</span>
         </div>
-      </div>
+      </a>
+
+      <a class="project-item reveal" href="https://github.com/sandeep7511/UK-Sponsorship-Visa-for-Employers-Data-Analysis-Dashboard" target="_blank" rel="noopener">
+        <div>
+          <div class="project-num">05</div>
+          <div class="project-title">UK Sponsorship Visa — Data Analysis Dashboard</div>
+          <p class="project-desc">End-to-end BI project analysing 16 million+ UK study and work sponsorship applications using SQL Server and Power BI. Built a star-schema data model with custom DAX measures for QoQ growth and study-to-work ratios, surfacing nationality concentration, sectoral dependencies, and post-2020 immigration surges across four government datasets.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag">Power BI · SQL</span>
+          <span class="project-status">↗ View on GitHub</span>
+        </div>
+      </a>
+
+      <a class="project-item reveal reveal-delay-1" href="https://github.com/sandeep7511/Developing-a-Power-BI-Dashboard-for-Olympic-Games-Analysis" target="_blank" rel="noopener">
+        <div>
+          <div class="project-num">06</div>
+          <div class="project-title">Power BI Dashboard — Olympic Games Analysis</div>
+          <p class="project-desc">Interactive Power BI dashboard visualising historical Summer and Winter Olympic medal data sourced from Wikipedia. Features medal breakdowns by country, era-level trend analysis, participation vs. success efficiency metrics, and gold/silver/bronze distribution — built end-to-end from raw web extraction through Excel cleaning to DAX-driven visuals.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag">Power BI</span>
+          <span class="project-status">↗ View on GitHub</span>
+        </div>
+      </a>
+
+      <a class="project-item reveal reveal-delay-2" href="https://github.com/sandeep7511/Hessian-Fly-Resistance-Plant-Stunting-and-Larval-Mortality-in-Durum-Wheat" target="_blank" rel="noopener">
+        <div>
+          <div class="project-num">07</div>
+          <div class="project-title">Hessian Fly Resistance — QTL Mapping &amp; ML in Durum Wheat</div>
+          <p class="project-desc">ML classification and QTL mapping on 2,649 USDA plant records to predict Hessian fly resistance in durum wheat. An ANN achieved 98% accuracy, with Random Forest pinpointing larval mortality as the top predictor. QTL analysis identified two major loci on chromosomes 2A and 3B together explaining over 50% of phenotypic variance in resistance.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag">Research · ML</span>
+          <span class="project-status">↗ View on GitHub</span>
+        </div>
+      </a>
 
     </div>
   </div>
@@ -751,7 +792,7 @@
         <span>Email</span>
         <span class="contact-arrow">↗</span>
       </a>
-      <a href="https://github.com/" class="contact-link" target="_blank" rel="noopener">
+      <a href="https://github.com/sandeep7511" class="contact-link" target="_blank" rel="noopener">
         <span>GitHub</span>
         <span class="contact-arrow">↗</span>
       </a>
