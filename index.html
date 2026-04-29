@@ -349,9 +349,15 @@
   .exp-place { font-size: 1rem; color: var(--ink-muted); font-weight: 500; margin-bottom: 1rem; }
   .exp-detail { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.7; }
 
-  /* CONTACT */
+  /* CONTACT SECTION - TIGHTENED UP */
+  #contact {
+    padding-top: 6rem;
+    padding-bottom: 4rem; /* Reduced bottom padding to bring footer up */
+  }
+
   #contact .container {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; min-height: 50vh;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; 
+    /* Removed min-height to kill empty space */
   }
 
   .contact-desc { font-size: 1.1rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 2rem; }
@@ -373,7 +379,7 @@
   .contact-arrow { font-size: 1.2rem; transition: transform 0.3s; color: var(--accent); }
   .contact-link:hover .contact-arrow { transform: translateX(5px) translateY(-5px); }
 
-  /* REDUCED FOOTER */
+  /* COMPACT FOOTER */
   footer {
     padding: 1rem 2rem;
     border-top: 1px solid var(--rule);
@@ -412,7 +418,7 @@
     .project-desc { max-width: 100%; }
     
     .nav-links { gap: 1.25rem; }
-    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
   }
 </style>
 </head>
